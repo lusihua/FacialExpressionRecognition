@@ -20,7 +20,7 @@ We'll be opening up all the pre-training models and code soon
 ### Train model 
 
 ```
-python train.py --model VGG19 --bs 128 --lr 0.01 --fold 1
+python train.py --model Resnet34 --bs 128 --lr 0.01 --fold 1
 ```
 
 ### Test whole folder accuracy
