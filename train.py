@@ -80,7 +80,7 @@ if opt.resume:
     # Load checkpoint.
     print('==> Resuming from checkpoint..')
     assert os.path.isdir(path), 'Error: no checkpoint directory found!'
-    checkpoint = torch.load(os.path.join(path,'pre_model.t7'))
+    checkpoint = torch.load(os.path.join(path,'afe_an_ma+fer2013_3.t7'))
     
     net.load_state_dict(checkpoint['net'])
     if not opt.pre:
@@ -184,9 +184,21 @@ def test(epoch):
             os.mkdir('./model/' + opt.model)
         if not os.path.isdir(path):
             os.mkdir(path)
-        torch.save(state, os.path.join(path, 'afe_an_ma+fer2013_3.t7'))
+        torch.save(state, os.path.join(path, 'pre_lu_7.t7'))
         best_Test_acc = Test_acc
         best_Test_acc_epoch = epoch
+    if epoch % 5 == 0:
+        print('Saving..')
+        print("best_Test_acc: %0.3f" % Test_acc)
+        state = {'net': net.state_dict() if use_cuda else net,
+                 'best_Test_acc': Test_acc,
+                 'best_Test_acc_epoch': epoch,
+                 }
+        if not os.path.isdir('./model/' + opt.model):
+            os.mkdir('./model/' + opt.model)
+        if not os.path.isdir(path):
+            os.mkdir(path)
+        torch.save(state, os.path.join(path, str(epoch) + 'baby_7_lu.t7'))
 
 for epoch in range(start_epoch, total_epoch):
     train(epoch)
