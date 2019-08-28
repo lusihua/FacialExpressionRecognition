@@ -45,7 +45,7 @@ python video_demo.py --video "your video path"
 ### Visualize result
 `For a test image by a test model,Output the highest score categories and scores of each category`
 
-* Thr pre-trained model can find in  **/model/VGG19/1/Test_model.t7**
+* Thr pre-trained model can find in  **/model/Resnet50/1/pre_model.t7**
 * running **visualize.py**, and the result saved in **/images/results/**
 
 ```
