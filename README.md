@@ -2,7 +2,7 @@
 This project includes face detection, face alignment and facial expression recognition.
 
 # Facial Expression Recognition
-
+![image](https://github.com/lusihua/FacialExpressionRecognition/blob/master/images/results/demo.png)
 ### Prepare
 
 * pytorch>0.4
